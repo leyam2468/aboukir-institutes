@@ -1,5 +1,5 @@
 <template>
-    <v-app dark>
+    <v-app>
         <h1 v-if="error.statusCode === 404">{{ pageNotFound }}</h1>
         <h2 v-else>{{ otherError }}</h2>
         <NuxtLink to="/">Home page</NuxtLink>
