@@ -1,10 +1,7 @@
 <template>
-    <!-- <v-layout
-        ><h2>Home</h2>
-
-        <div column justify-center align-center>test</div>
-    </v-layout> -->
     <v-app>
+        <lastnews />
+
         <div class="home">
             <h2>Home</h2>
         </div>
@@ -12,12 +9,18 @@
 </template>
 
 <script>
+import lastnews from '~/components/home/lastnews.vue'
 export default {
-    components: {},
+    components: {
+        lastnews,
+    },
 }
 </script>
 <style lang="scss">
 .home {
     height: 5000px;
+    h2 {
+        color: $color-one;
+    }
 }
 </style>

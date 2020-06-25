@@ -1,12 +1,13 @@
 <template>
     <div>
+        <!-- left side bar -->
         <v-navigation-drawer
             v-model="drawer"
             :mini-variant="miniVariant"
             :clipped="clipped"
             fixed
             app
-            color="bgColor"
+            color="bgOne"
         >
             <v-list>
                 <v-list-item>
@@ -40,16 +41,15 @@
                 </v-list-item>
             </v-list>
         </v-navigation-drawer>
-
         <!--navbar -->
         <v-app-bar
             app
             :clipped-left="clipped"
             hide-on-scroll=""
-            color="bgColor"
+            color="bgOne"
+            height="55"
         >
             <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer" />
-
             <!-- dark -->
             <v-btn icon color="white" @click="toggletheme">
                 <v-icon>
@@ -80,20 +80,9 @@
                     </v-toolbar>
                 </v-card>
             </v-dialog>
-            <v-btn>تسجيل الدخول</v-btn>
-
-            <!-- <v-toolbar-items class="hidden-xs-only">
-                <v-btn
-                    v-for="item in items"
-                    :key="item.id"
-                    :to="item.to"
-                    text
-                    class="font-weight-bold"
-                    nuxt
-                >
-                    {{ item.title }}
-                </v-btn>
-            </v-toolbar-items> -->
+            <!-- login btn -->
+            <v-btn class="hidden-xs-only">تسجيل الدخول</v-btn>
+            <!-- Searsh
             <v-autocomplete
                 v-model="select"
                 :loading="loading"
@@ -106,9 +95,25 @@
                 hide-details
                 label="What state are you from?"
                 solo-inverted
-            ></v-autocomplete>
+            ></v-autocomplete> -->
+            <!-- space -->
             <v-spacer />
-            <img src="~/assets/logo.png" alt="" />
+            <!-- links -->
+            <v-toolbar-items class="hidden-xs-only">
+                <v-btn
+                    v-for="item in items"
+                    :key="item.id"
+                    :to="item.to"
+                    text
+                    class="font-weight-bold"
+                    nuxt
+                    color="white"
+                    large
+                >
+                    {{ item.title }}
+                </v-btn>
+            </v-toolbar-items>
+            <img src="~/assets/logo.png" alt="" width="200px" height="50px" />
         </v-app-bar>
     </div>
 </template>
@@ -121,6 +126,7 @@ export default {
             darktheme: false,
             drawer: false,
             fixed: false,
+            clipped: false,
             items: [
                 {
                     icon: 'mdi-apps',
@@ -191,9 +197,14 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.v-btn--active {
+    color: black !important;
+    font-weight: bold;
+}
 .v-btn--active:hover::before,
 .v-btn--active::before {
-    background-color: red;
+    background-color: white;
+    color: #000;
     opacity: 0.8;
 }
 </style>

@@ -93,7 +93,8 @@ export default {
                     success: colors.green.accent3,
                 },
                 light: {
-                    bgColor: '#44bd32',
+                    bgOne: '#1B5E20',
+                    bgTow: '#44bd32',
                 },
             },
         },
