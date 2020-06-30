@@ -20,7 +20,7 @@
                         >
                     </v-btn>
                     <v-btn icon color="white" @click.stop="clipped = !clipped">
-                        <v-icon>mdi-application</v-icon>
+                        <v-icon color="white">mdi-application</v-icon>
                     </v-btn>
                 </v-list-item>
 
@@ -33,13 +33,25 @@
                     color="white"
                 >
                     <v-list-item-action>
-                        <v-icon>{{ item.icon }}</v-icon>
+                        <v-icon color="white">{{ item.icon }}</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                        <v-list-item-title color="white" v-text="item.title" />
+                        <v-list-item-title
+                            class="white--text"
+                            style="font-weight: 600;"
+                            v-text="item.title"
+                        />
                     </v-list-item-content>
                 </v-list-item>
             </v-list>
+            <!-- buttom Section -->
+            <template v-slot:append>
+                <div class="pa-2">
+                    <v-btn block elevation="8" class="font-weight-black"
+                        >Login</v-btn
+                    >
+                </div>
+            </template>
         </v-navigation-drawer>
         <!--navbar -->
         <v-app-bar
@@ -82,20 +94,6 @@
             </v-dialog>
             <!-- login btn -->
             <v-btn class="hidden-xs-only">تسجيل الدخول</v-btn>
-            <!-- Searsh
-            <v-autocomplete
-                v-model="select"
-                :loading="loading"
-                :items="itemss"
-                :search-input.sync="search"
-                cache-items
-                class="mx-4"
-                flat
-                hide-no-data
-                hide-details
-                label="What state are you from?"
-                solo-inverted
-            ></v-autocomplete> -->
             <!-- space -->
             <v-spacer />
             <!-- links -->
@@ -105,7 +103,7 @@
                     :key="item.id"
                     :to="item.to"
                     text
-                    class="font-weight-bold"
+                    class="font-weight-bold px-2"
                     nuxt
                     color="white"
                     large
@@ -113,7 +111,12 @@
                     {{ item.title }}
                 </v-btn>
             </v-toolbar-items>
-            <img src="~/assets/logo.png" alt="" width="200px" height="50px" />
+            <img
+                src="~/assets/images/logo.png"
+                alt=""
+                width="200px"
+                height="50px"
+            />
         </v-app-bar>
     </div>
 </template>
@@ -203,8 +206,8 @@ export default {
 }
 .v-btn--active:hover::before,
 .v-btn--active::before {
-    background-color: white;
-    color: #000;
+    background-color: rgb(34, 255, 0);
+    color: #1b5e20;
     opacity: 0.8;
 }
 </style>

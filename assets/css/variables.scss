@@ -1,0 +1,15 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+
+/* var */
+$color-one: #00f;
+$font-one: 'Cairo', sans-serif;
+$overlay: rgb(0, 0, 0, 0.8);
+/* class*/
+.font-font {
+    font-family: 'Cairo', sans-serif;
+}
+/* Global */
+* {
+    font-family: $font-one;
+    letter-spacing: 0px;
+}

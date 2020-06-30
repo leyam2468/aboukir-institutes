@@ -1,26 +1,26 @@
 <template>
-    <v-app>
-        <lastnews />
-
-        <div class="home">
-            <h2>Home</h2>
-        </div>
+    <v-app class="home">
+        <banner />
+        <about />
+        <sections />
     </v-app>
 </template>
 
 <script>
-import lastnews from '~/components/home/lastnews.vue'
+// import lastnews from '~/components/home/lastnews.vue'
+import banner from '~/components/home/banner.vue'
+import about from '~/components/home/about.vue'
+import sections from '~/components/home/sections.vue'
 export default {
     components: {
-        lastnews,
+        banner,
+        about,
+        sections,
     },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .home {
     height: 5000px;
-    h2 {
-        color: $color-one;
-    }
 }
 </style>

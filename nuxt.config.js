@@ -38,6 +38,11 @@ export default {
                 type: 'image/x-icon',
                 href: '/favicon.ico',
             },
+            {
+                rel: 'stylesheet',
+                href:
+                    'https://fonts.googleapis.com/css2?family=Cairo:wght@300;600;900&display=swap',
+            },
         ],
     },
     /*
@@ -79,7 +84,7 @@ export default {
      ** https://github.com/nuxt-community/vuetify-module
      */
     vuetify: {
-        customVariables: ['~/assets/variables.scss'],
+        customVariables: ['~/assets/css/variables.scss'],
         theme: {
             dark: false,
             themes: {
